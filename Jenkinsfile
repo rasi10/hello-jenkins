@@ -18,5 +18,14 @@ node {
     
     stage('Checking Robot') {
         sh 'robot hello.robot'
+        step([
+            $class : 'RobotPublisher',
+            outputPath : outputDirectory,
+            outputFileName : "*.xml",
+            disableArchiveOutput : false,
+            passThreshold : 100,
+            unstableThreshold: 95.0,
+            otherFiles : "*.png",
+        ])
     }
 }
