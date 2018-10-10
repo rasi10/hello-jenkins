@@ -17,6 +17,6 @@ node {
     }
     
     stage('Checking Robot') {
-        sh 'robot -version'
+        sh 'robot --version'
     }
 }
