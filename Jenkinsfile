@@ -15,4 +15,8 @@ node {
     stage('Running the file') {
         sh './hello.sh'
     }
+    
+    stage('Checking Robot') {
+        sh 'robot -version'
+    }
 }
