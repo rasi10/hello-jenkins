@@ -3,11 +3,16 @@ node {
         checkout scm
     }
 
-    stage('Maven version') {
-        sh 'mvn -version'
+    stage('Directory/Location') {
+        sh 'pwd'
+        sh 'ls -lart'
     }
     
-      stage('Java Version') {
-        sh 'java -version'
+    stage('Make the file executable') {
+        sh 'chmod 777 hello.sh'
+    }
+    
+    stage('Running the file') {
+        sh './hello.sh'
     }
 }
