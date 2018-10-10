@@ -20,7 +20,6 @@ node {
         sh 'robot hello.robot'
         step([
             $class : 'RobotPublisher',
-            outputPath : outputDirectory,
             outputFileName : "*.xml",
             disableArchiveOutput : false,
             passThreshold : 100,
